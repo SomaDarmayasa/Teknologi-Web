@@ -23,7 +23,7 @@
   <br>
   </div>
  
- <div  class="post-info" style="float : left;">
+ <div  class="post-info" style="float : left; float:right;">
 Di  Posting  Oleh  <b>Admin</b>
 </div>
 
@@ -56,25 +56,7 @@ Ubud yang terletak di sebelah utara kota Denpasar, dengan waktu tempuh kurang le
 			</div>
 		</div>
         
-        <div class="container" style="float:right; width : 300px">
-        <h2> Leave a Reply </h2>
-  <form>
-    <div class="form-group">
-      <label for="usr">E-Mail Name:</label>
-      <input type="text" class="form-control" id="usr">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div>
-<div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
-  </form>
-</div>
-
-
+        
 	<div class="container" style=" background-color: cornsilk;float : left; width : 700px;">
 		<h1> 1. Monkey Forest </h1>
 		<img src="media/monkey-forest.jpg" class="img-rounded" alt="Cinque Terre" width="650" height="400"> 
@@ -125,5 +107,100 @@ Tiket: Gratis
 Jam Buka: 04.00-18.00 </p1>
 	</div>
 </div>
+</div>
+<div class="container  " style="float:left">    
+      <div class="content">
+        <div class="col-lg-7 bg-info" style=" background-color:aquamarine;">
+          <h2>Tinggalkan Balasan atau Komentar Anda</h2>   
+          <hr>
+          
+          <form class=" form-horizontal " action=" ">
+            <div class="form-group ">
+              <label class="control-label col-sm-3 ">Nama:</label>
+              <div class="col-sm-9 ">
+                  <input type="text" class="form- control " required placeholder="Masukkan Nama " name="nama ">
+              </div>
+            </div>
+            <div class="form-group ">
+              <label class="control-label col-sm-3 ">Email:</label>
+              <div class="col-sm-9 ">
+                <input type="email" class="form- control " placeholder="Masukkan Email " name="email ">
+              </div>
+            </div>
+            <div class="form-group ">
+              <label class="control-label col-sm-3 ">Password:</label>
+              <div class="col-sm-9 ">
+                <input type="password" class="form- control psw " placeholder="Masukkan password ">
+              </div>
+            </div>
+            <div class="form-group ">
+              <label class="control-label col-sm-3 ">Re-Password:</label>
+              <div class="col-sm-9 ">
+                <input type="password" class="form- control repsw " placeholder="Tulis Ulang password anda">
+                <small class="errpsw "></small>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label class="control-label col-sm-3 ">Comment:</label>
+              <div class="col-sm-9 ">
+                <textarea type="text" class="form- control " rows="3" required placeholder="Masukkan Komentar Anda " name="comment "></textarea>
+              </div>
+            </div>
+            <div class="form-group ">
+              <div class="col-sm-offset-2 col-sm-9 ">
+                <div class="checkbox ">
+                  <label><input type="checkbox" name="remember "> Remember me</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ">
+              <div class="col-sm-offset-3 col-sm-9 ">
+                <button type="submit " class="btn btn-default ">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+    
+  </div>
+  <div id="myModal " class="modal fade " role="dialog ">
+    <div class="modal-dialog ">
+      <!-- Modal content-->
+      <div class="modal-content ">
+        <div class="modal-header ">
+          <button type="button " class="close " data- dismiss="modal ">&times;</button>
+          <h4 class="modal-title ">Berhasil</h4>
+        </div>
+        <div class="modal-body ">
+          <p></p>
+        </div>
+        <div class="modal-footer ">
+          <button type="button " class="btn btn-default " data- dismiss="modal ">Close</button>
+        </div>
+      </div>
+    </div>
 </body>
+<script>
+  $(document).ready(function() {
+    $(".form-horizontal ").submit(function() {
+      var ps1 = $('.psw').val();
+      var ps2 = $('.repsw').val(); 
+      var valid = 0;
+      $('.err').html(''); 
+      if (ps1 == ps2) {
+        valid = 1;
+      } else {
+        $('.errpsw').html('Passsword Anda Tidak Sama');
+      }
+      if (valid == 0) { 
+        event.preventDefault();
+      } else {
+        $('p').html("Komentar atas Nama Akun " + $('input[name="nama "]').val() + " Berhasil Ditambahkan dan Terima Kasih sudah menambahkan Komentar  ");
+        $('.modal').modal('show'); 
+        event.preventDefault();
+      }
+    });
+  });
+</script>
+
 </html>
